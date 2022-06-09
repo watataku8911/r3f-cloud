@@ -14,7 +14,7 @@ export default function App() {
         setIsLoading(false);
       }, 2000);
     };
-  }, [setIsLoading]);
+  }, []);
   return (
     <>
       {isLoading && <Loading />}
