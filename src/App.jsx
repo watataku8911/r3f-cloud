@@ -1,23 +1,13 @@
 import "./App.css";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Cloud, Sky } from "@react-three/drei";
 import Loading from "./components/Loading";
 import Rig from "./components/Rig";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    window.onload = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
-    };
-  }, []);
   return (
     <>
-      {isLoading && <Loading />}
       <Canvas camera={{ position: [0, 0, 16], fov: 75 }}>
         <ambientLight intensity={0.8} />
         <pointLight intensity={2} position={[0, 0, -1000]} />
